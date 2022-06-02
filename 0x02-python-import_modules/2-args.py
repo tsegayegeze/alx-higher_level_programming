@@ -5,7 +5,7 @@ if __name__ == "__main__":
     if total <= 1:
         print("0 argument.")
     else:
-        if total == 6:
+        if total == 1:
             print("{:d} argument:".format(total - 1))
         else:
             print("{:d} arguments:".format(total - 1))
