@@ -1,17 +1,9 @@
 #!/usr/bin/python3
-"""Module 5-to_json_string.
-Returns the JSON representation of an object.
-"""
-
-
+"""holbertontask"""
 import json
 
 
-def to_json_string(my_obj):
-    """Returns th JSON representation of my_obj.
-    Args:
-        - my_obj: string to represent
-    Returns: JSON representation
-    """
-
-    return json.dumps(my_obj)
+def save_to_json_file(my_obj, filename):
+    """holbertontask"""
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(my_obj, f)
