@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""holbertontask"""
+'''task 7 module'''
+
+
 import sys
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
+arglist = list(sys.argv[1:])
 
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-load_json_file = __import__('8-load_from_json_file').load_from_json_file
+try:
+    old_data = load_from_json_file('add_item.json')
+except Exception:
+    old_data = []
 
-save_to = "add_item.json"
-old_json = []
-
-if len(sys.argv) > 0:
-    try:
-        old_json = load_json_file(save_to)
-    except FileNotFoundError:
-        pass
-    save_to_json_file(old_json + sys.argv[1:], save_to)
+old_data.extend(arglist)
+save_to_json_file(old_data, 'add_item.json'
